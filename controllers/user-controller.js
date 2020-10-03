@@ -48,15 +48,22 @@ const userController = {
     }, 
 
     deleteUser(req, res) {
+
+        console.log('right here')
         User.findOneAndDelete({_id : req.params.id})
+        
         .then(dbUserData => {
+            console.log('here')
+            console.log(dbUserData)
             if (!dbUserData) {
-                return res.status(404).json(err);
+                return res.status(404).json({message: "Not found!"});
             }
-            return Thought.deleteMany({_id:{$in: req.params.id}})
-            // res.json(dbUserData);
+            
+            // return Thought.deleteMany({_id:{$in: req.params.id}})
+            res.json(dbUserData);
         })
-        .catch(err => res.status(400).json(err));
+        .catch(err => { console.log(err)
+            res.status(400).json(err)});
     }
 
 }

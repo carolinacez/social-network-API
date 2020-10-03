@@ -24,14 +24,14 @@ const thoughtController = {
         })
     }, 
     
-    createThought({params, body}, res) {
+    createThought({body}, res) {
         Thought.create(body)
         .then(({_id}) => {
             return User.findOneAndUpdate(
-                {_id: params.userId},
+                {_id: body.userId},
                 { $push: { thought: _id}},
                 {new: true}
-            );
+            )
         })
         .then(dbThoughtData => {
             if(!dbThoughtData) {
@@ -56,8 +56,8 @@ const thoughtController = {
         .catch(err => res.status(400).json(err));
     }, 
 
-    deleteThought(req, res) {
-        User.findOneAndDelete({_id : req.params.id})
+    deleteThought({params}, res) {
+        Thought.findOneAndDelete({_id : params.id})
         .then(dbThoughtData => {
             if (!dbThoughtData) {
                 return res.status(404).json(err);
