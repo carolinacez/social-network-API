@@ -2,7 +2,7 @@ const { User, Thought } = require('../models');
 
 const userController = {
 
-    getAllUser(req, res) {
+    getAllUsers(req, res) {
         
         User.find()
         .then(dbUserData => res.json(dbUserData))
@@ -11,7 +11,7 @@ const userController = {
         })
     }, 
 
-    getUserbyId({ params }, res) {
+    getUserById({ params }, res) {
         User.findOne ({_id : params.id}) 
         .populate ('thought')
         .populate ('friends')
@@ -59,6 +59,6 @@ const userController = {
         .catch(err => res.status(400).json(err));
     }
 
-
-    
 }
+
+module.exports = userController;
