@@ -3,8 +3,8 @@ const thoughtRoutes = require('./thought-routes');
 const userRoutes = require('./user-routes');
 
 // add prefix of `/pizzas` to routes created in `pizza-routes.js`
-router.use('/thought', thoughtRoutes);
-router.use('/user', userRoutes);
+// router.use('/', thoughtRoutes);
+router.use('/', userRoutes);
 
 
 module.exports = router;
