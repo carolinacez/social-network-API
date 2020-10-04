@@ -10,7 +10,7 @@ const ReactionSchema = new Schema(
             },
         
         reactionBody: {
-            type: Date,
+            type: String,
             required: 'This field is required',
             maxlength: 280
         },
@@ -33,6 +33,4 @@ const ReactionSchema = new Schema(
     }
 );
 
-
-// export the User model
 module.exports = ReactionSchema;

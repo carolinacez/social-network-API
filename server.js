@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(require('./routes'));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/user', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/socialNetwork', {
   useFindAndModify: false,
   useNewUrlParser: true,
   useUnifiedTopology: true
