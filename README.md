@@ -13,7 +13,7 @@
   This is a social networK API . You are able to GET, POST, PUT and DELETE users and thoughts. You are also able to POST and DELETE friends from users and reactions from thoughts. 
 
   ## Installation
-   For this social network we used MongoDB and Mongoose. Please run npm start, to start your server. 
+   For this social network we used MongoDB and Mongoose. Please run npm start to start your server. 
 
   ## Usage 
   [social network Part1 video](https://drive.google.com/file/d/14L6opLW2zJrunBXj8zTZ4QcALzMdjx3B/view)
